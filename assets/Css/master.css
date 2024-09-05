@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'RedHatTextVariable';
+    src: url('../../Public/Fonts/RedHatText-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RedHatTextVariable';
+    src: url('../../Public/Fonts/RedHatText-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+:root{
+    --rojo: hsl(14, 86%, 42%);
+    --verde: hsl(159, 69%, 38%);
+    --rosa50: hsl(20, 50%, 98%);
+    --rosa1: hsl(13, 31%, 94%);
+    --rosa3: hsl(14, 25%, 72%);
+    --rosa4: hsl(7, 20%, 60%);
+    --rosa5: hsl(12, 20%, 44%);
+    --rosa9: hsl(14, 65%, 9%);
+}
+body{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--rosa1);
+}
+
+/**** cards Part ****/
+
+.container{
+    padding: 4rem;
+}
+.container h1{
+    font-weight: 400;
+    font-family: 'RedHatTextVariable';
+}
+.container .cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.container .cards .card .card-img {
+    max-width: 300px;
+    position: relative;
+}
+.container .cards .card .card-img a{
+    font-family: 'RedHatTextVariable';
+}
+.container .cards .card .card-img img {
+    border-radius: 8px;
+    transition: 0.4s;
+}
+.container .cards .card .card-img:hover img {
+    transform: scale(1.1);
+}
+.container .cards .card .card-img button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 0.4rem 1rem;
+    position: absolute;
+    left: calc(50% - 64px);
+    bottom: -20px;
+    border: 1px solid rgba(128, 128, 128, 0.472);
+    transition: 0.4s;
+    
+}
+.container .cards .card .card-img span{
+    text-wrap: nowrap;
+}
+.container .cards .card .card-img a span:last-child{
+    flex-grow: 1;
+}
+.container .cards .card .card-img a img {
+    max-width: 20px;
+}
+.container .cards .card .card-info{
+    margin-top: 30px;
+    line-height: 23px;
+}
+.container .cards .card .card-info p:first-child{
+    font-weight: 400;
+    color: var(--rosa4);
+}
+.container .cards .card .card-info p{
+    font-family: 'RedHatTextVariable';
+    font-weight: 600;
+}
+.container .cards .card .card-info p:last-child,
+p:nth-child(2) {
+    font-family: 'RedHatTextVariable';
+}
+.container .cards .card .card-info p:last-child {
+    color: var(--rojo);
+}
+
+/**** cart Part****/
+
+.cart {
+    padding: 3rem;
+    border-radius: 10px;
+    margin-top: 5%;
+    max-height: 300px;
+    background-color: var(--rosa50);
+    background-image: url("../../Public/Icons/illustration-empty-cart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cart h2 {
+    color: var(--rojo);
+    font-family: 'RedHatTextVariable';
+}
+.cart p {
+    color: #ad8a86;
+}
+
+/**** Responsive Part ****/
+@media (max-width:1200px){
+    .cart{
+            margin-right: 4rem;
+    }
+}
+@media (max-width:768px){
+    .container .cards {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container .cards .card .card-img{
+        min-width: 300px;
+    }
+    body {
+        flex-direction: column;
+    }
+    .cart {
+        margin: 0 auto;
+        min-height: 300px;
+    }
+    .container h1{
+        display: flex;
+        justify-content: center;
+     }
+}
+@media (max-width:576){
+    .container h1{
+       display: flex;
+       justify-content: center;
+    }
+}
+
